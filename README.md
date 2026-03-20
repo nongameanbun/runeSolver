@@ -44,4 +44,4 @@ pip install -r requirements.txt
 python main.py
 ```
 
-`localhost:8020/docs` 로 swagger 명세를 확인할 수 있습니다.
+`localhost:8020/docs` 로 swagger 명세를 확인 가능
