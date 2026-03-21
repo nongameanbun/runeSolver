@@ -75,6 +75,9 @@ def solver() :
 
     normal_res, rotate_index, centers = get_initial_answer(yolo)
 
+    if normal_res == None :
+        return None
+
     # normal rune
     if (len(rotate_index) == 0):        
         return normal_res
@@ -94,7 +97,8 @@ def solver() :
         except Exception as e:
             print(e)
             continue
-    assert flag, "Failed to load video data for rotation rune analysis."
+    if not flag:
+        return None
 
 
     last_angle = [-1, -1, -1, -1]

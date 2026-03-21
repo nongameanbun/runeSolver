@@ -41,7 +41,8 @@ def get_initial_answer(yolo) :
         if len(prev["res"]) == 4:
             flag = True
             break
-    assert flag, "abnormal detection"
+    if not flag:
+        return None, None, None
 
     flag = False
     for _ in range(3) :
@@ -52,7 +53,8 @@ def get_initial_answer(yolo) :
         if prev["res"] == cur["res"] :
             flag = True
             break
-    assert flag, "abnormal detection"
+    if not flag:
+        return None, None, None
 
     return cur["res"], cur["rotate_index"], cur["centers"]
 
